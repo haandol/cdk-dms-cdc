@@ -14,13 +14,13 @@ open [**infra/env/dev.env**](/infra/env/dev.env) and fill the blow fields
 
 > Remove all optional fields for empty value (empty value will be failed on validation)
 
-- `AWS_ACCOUNT_ID`: 12 digit account id
-- `AWS_REGION`: e.g. "ap-northeast-2"
-- `VPC_ID`: e.g. vpc-xxxxxxxx
-- `SECURITY_GROUP_IDS`: comma separated security group ids, e.g. sg-xxxxxxxx,sg-yyyyyyyy
-- `SECRETS_MANAGER_ARN`: secretsmanager secretarn that contains RDS connection informations e.g. `arn:aws:secretsmanager:ap-northeast-2:xxxxx:secret:yyyyy`
-- `KAFKA_BROKER`: TLS kafka broker address including port, e.g. kafka-broker1:9094,kafka-broker2:9094
-- `KAFKA_TOPIC`: outgoing kafka topic name, e.g. "cdc"
+- `AWS_ACCOUNT_ID`: 12 digit account id. e.g. `123456789012`
+- `AWS_REGION`: e.g. `ap-northeast-2`
+- `VPC_ID`: e.g. `vpc-xxxxxxxx`
+- `SECURITY_GROUP_IDS`: comma separated security group ids. e.g. `sg-xxxxxxxx,sg-yyyyyyyy`
+- `SECRETS_MANAGER_ARN`: secretsmanager secretarn that contains RDS connection informations. e.g. `arn:aws:secretsmanager:ap-northeast-2:xxxxx:secret:yyyyy`
+- `KAFKA_BROKER`: TLS kafka broker address including port. e.g. kafka-broker1:9094,kafka-broker2:9094
+- `KAFKA_TOPIC`: outgoing kafka topic name. e.g. "cdc"
 
 and copy `env/dev.env` file to project root as `.env`
 
