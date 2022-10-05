@@ -10,6 +10,16 @@ From Aurora MySQL to kafka CDC(Capture Data Change) example using CDK.
 - node 16.x
 - cdk 2.x
 
+## Enable Aurora MySQL CDC
+
+follow the Resolution at the [link](https://aws.amazon.com/premiumsupport/knowledge-center/aurora-mysql-increase-binlog-retention/?nc1=h_ls) and set db parameter group.
+
+and then, run following sql on Aurora MySQL to increase binlog retention.
+
+```sql
+call mysql.rds_set_configuration('binlog retention hours', 168);
+```
+
 # Installation
 
 open [**infra/env/dev.env**](/infra/env/dev.env) and fill the blow fields
