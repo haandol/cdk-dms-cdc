@@ -2,6 +2,8 @@
 
 From Aurora MySQL to kafka CDC(Capture Data Change) example using CDK.
 
+![architecture](/docs/architecture.png)
+
 # Prerequisites
 
 - setup awscli

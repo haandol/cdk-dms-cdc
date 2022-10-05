@@ -1,0 +1,25 @@
+@startuml "Sink CDC from Aurora MySQL to MSK using DMS"
+
+!include <awslib/AWSCommon>
+!include <awslib/AWSSimplified.puml>
+!include <awslib/Analytics/ManagedStreamingforKafka.puml>
+!include <awslib/Database/RDSAmazonAurorainstance.puml>
+!include <awslib/Database/DatabaseMigrationService.puml>
+!include <awslib/Database/DMSDatabaseMigrationWorkflow.puml>
+!include <awslib/Database/DatabaseMigrationService.puml>
+
+package "VPC" {
+  RDSAmazonAurorainstance(rds, "Aurora MySQL", "")
+  ManagedStreamingforKafka(msk, "Managed Streaming for Kafka", "")
+}
+DMSDatabaseMigrationWorkflow(source, "DMS Source Endpoint", "")
+DMSDatabaseMigrationWorkflow(target, "DMS Target Endpoint", "")
+DatabaseMigrationService(cdc, "DMS CDC Task", "")
+
+source --> rds : 1. connect to tail binlog changes
+target --> msk : 1. connect to send CDC events
+
+cdc --> source : 2. fetch binlog changes
+cdc --> target : 3. send CDC events
+
+@enduml
