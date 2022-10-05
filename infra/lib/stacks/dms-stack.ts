@@ -1,11 +1,11 @@
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import * as ec2 from 'aws-cdk-lib/aws-ec2';
-import { ReplicationInstance } from './constructs/replication-instance';
-import { AuroraMySQLSourceEndpoint } from './constructs/aurora-source-endpoint';
-import { KafkaTargetEndpoint } from './constructs/kafka-target-endpoint';
+import { ReplicationInstance } from '../constructs/replication-instance';
+import { AuroraMySQLSourceEndpoint } from '../constructs/aurora-source-endpoint';
+import { KafkaTargetEndpoint } from '../constructs/kafka-target-endpoint';
 import { Config } from '../configs/loader';
-import { CdcReplicationTask } from './constructs/cdc-replication-task';
+import { CdcReplicationTask } from '../constructs/cdc-replication-task';
 
 interface IProps extends cdk.StackProps {
   readonly vpcId: string;

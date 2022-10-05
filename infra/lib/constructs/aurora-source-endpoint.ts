@@ -1,7 +1,7 @@
 import { Construct } from 'constructs';
 import * as dms from 'aws-cdk-lib/aws-dms';
 import * as iam from 'aws-cdk-lib/aws-iam';
-import { Config } from '../../configs/loader';
+import { Config } from '../configs/loader';
 
 interface IProps {
   endpointName: string;
