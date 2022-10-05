@@ -18,7 +18,7 @@ open [**infra/env/dev.env**](/infra/env/dev.env) and fill the blow fields
 - `AWS_REGION`: e.g. "ap-northeast-2"
 - `VPC_ID`: e.g. vpc-xxxxxxxx
 - `SECURITY_GROUP_IDS`: comma separated security group ids, e.g. sg-xxxxxxxx,sg-yyyyyyyy
-- `SECRETS_MANAGER_ARN`: secretsmanager secretarn that contains RDS connection informations e.g. arn:aws:secretsmanager:ap-northeast-2:xxxxxxxxxxxx:secret:xxxxxxxxxxxx
+- `SECRETS_MANAGER_ARN`: secretsmanager secretarn that contains RDS connection informations e.g. arn:aws:secretsmanager:ap-northeast-2:xxxxx:secret:yyyyy
 - `KAFKA_BROKER`: TLS kafka broker address including port, e.g. kafka-broker1:9094,kafka-broker2:9094
 - `KAFKA_TOPIC`: outgoing kafka topic name, e.g. "cdc"
 
